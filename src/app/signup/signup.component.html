@@ -1,0 +1,26 @@
+<div class="signup-form">
+    <h2>Sign Up</h2>
+   
+    <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+        <div>
+          <label for="username">Username:</label>
+          <input id="username" [(ngModel)]="username" name="username" required>
+        </div>
+      
+        <div>
+          <label for="email">Email:</label>
+          <input id="email" [(ngModel)]="email" name="email" type="email" required>
+        </div>
+      
+        <div>
+          <label for="password">Password:</label>
+          <input id="password" [(ngModel)]="password" name="password" type="password" required>
+        </div>
+      
+        <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+        <button (click)="goToLogin()" class="btn btn-secondary">Go to Login</button>
+      </form>
+    <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+  </div>
+  
+  

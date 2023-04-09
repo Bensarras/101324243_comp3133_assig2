@@ -1,0 +1,9 @@
+<div *ngIf="employee" class="employee-view-container">
+    <h1>{{employee.name}} {{employee.lastname}}</h1>
+    <p>Email: {{employee.email}}</p>
+    <p>Salary: {{employee.salary}}</p>
+    <p>Gender: {{employee.gender}}</p>
+    <button (click)="goBack()">Back</button>
+  </div>
+  
+  

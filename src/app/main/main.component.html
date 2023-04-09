@@ -1,0 +1,32 @@
+<h1>Welcome, {{ user}}!</h1>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.lastname }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.salary }}</td>
+        <td>{{ employee.gender }}</td>
+        <td>
+            <button (click)="deleteEmployee(employee.id)">Delete</button>
+            <button [routerLink]="['/employee', employee.id]">View</button>
+        </td>
+      </tr>
+    </tbody>
+    <button (click)="goToCreateEmployee()">Add an employee</button>
+  </table>
+  <button (click)="signOut()">Sign Out</button>
+
+  

@@ -1,0 +1,59 @@
+<!-- <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" [(ngModel)]="name" name="name" required />
+    </div>
+    <div>
+      <label for="lastname">Lastname:</label>
+      <input id="lastname" [(ngModel)]="lastname" name="lastname" required />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="email" name="email" required />
+    </div>
+    <div>
+      <label for="salary">Salary:</label>
+      <input id="salary" type="number" [(ngModel)]="salary" name="salary" required />
+    </div>
+    <div>
+      <label for="gender">Gender:</label>
+      <input id="gender" [(ngModel)]="gender" name="gender" required />
+    </div>
+    <button type="submit">Create Employee</button>
+  </form>
+   -->
+   <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" [(ngModel)]="name" name="name" required>
+    </div>
+  
+    <div>
+      <label for="lastname">Last Name:</label>
+      <input id="lastname" [(ngModel)]="lastname" name="lastname" required>
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="email" name="email" required>
+    </div>
+  
+    <div>
+      <label for="salary">Salary:</label>
+      <input id="salary" [(ngModel)]="salary" name="salary" type="number" required>
+    </div>
+  
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" [(ngModel)]="gender" name="gender" required>
+        <option value="" disabled>Select a gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  
+    <button type="submit" [disabled]="!employeeForm.valid">Submit</button>
+    <button (click)="goBack()">Back</button>
+  </form>
+  
